@@ -1,0 +1,55 @@
+
+.containerInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: cornflowerblue;
+
+    .containerInputName {
+        width: 60%;
+        margin-top: 1rem;
+        
+        #taskname {
+            width: 100%;
+            height: 3rem;
+        }
+    }
+
+    .containerInputDate {
+        width: 60%;
+        margin-top: 1rem;
+
+        #taskdate {
+            width: 100%;
+            height: 3rem;
+        }
+    }
+
+    .containerInputButton {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+
+        .addButton {
+            width: 40%;
+            height: 2rem;
+            cursor: pointer;
+        }
+    }
+}
+
+
+.nameLabel {
+    display: block;
+    text-align: left;
+}
+
+
+.dateLabel {
+    display: block;
+    text-align: left;
+}

@@ -1,11 +1,13 @@
 
+import Container from "../container/Container";
+import ContainerHeader from "../containerHeader/ContainerHeader";
 import "./Main.scss"
 
 const Main = () => {
     return (
-        <div className="main">
-
-        </div>
+        <main className="main">
+            <Container />
+        </main>
     )
 }
 

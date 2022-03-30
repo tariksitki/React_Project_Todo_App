@@ -1,0 +1,32 @@
+
+.task-div {
+    width: 60%;
+    height: 5rem;
+    background-color: coral;
+    margin: auto;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    
+
+    .task-div-up {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        
+        // .task-div-name {
+        //     padding: 1rem;
+        // }
+
+        // .task-div-down {
+        //     padding: 1rem;
+        // }
+    }
+
+    .task-div-down {
+        width: 100%;
+        margin-top: 1rem;
+        
+    }
+}
+

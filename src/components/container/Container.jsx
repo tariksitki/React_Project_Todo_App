@@ -3,26 +3,24 @@ import ContainerHeader from "../containerHeader/ContainerHeader";
 import ContainerInput from "../containerInput/ContainerInput";
 import "./Container.scss";
 import { useState } from "react";
+import Task from "../task/Task";
 
 const Container = () => {
-    const [state, setState] = useState(true);
-
+    const [stateOpen, setStateOpen] = useState(true);
+    const [stateAdd, setStateAdd] = useState(true);
+   
     const handleClickOpen = (e) => {
        return ( 
-        (e.target.classList.contains("buttonOpen") ? setState(!state) : null)
+        (e.target.classList.contains("buttonOpen") ? setStateOpen(!stateOpen) : null)
        )}
     
-    const handleClickAdd = (e) => {
-        console.log(e.target);
-    }
-       
     return (
-        <div className="container" onClick={() => {
-            handleClickOpen() 
-            handleClickAdd()
-            }}>
+        <div className="container" onClick={(e) => {
+            handleClickOpen(e)
+        }}>
             <ContainerHeader />
-            {state ? <ContainerInput /> :null }
+           
+            {stateOpen ?  <ContainerInput classname = "visible" /> : <ContainerInput classname = "unvisible" />}
         </div>
     )
 };

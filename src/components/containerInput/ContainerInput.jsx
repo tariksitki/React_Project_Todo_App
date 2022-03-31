@@ -41,9 +41,10 @@ const ContainerInput = (props) => {
         );
       })),
       localStorage.setItem("dataLocal", JSON.stringify(dataArray))
+      
     );
   };
-
+  
   return (
     <div className="containerInput" onClick={handleDelete}>
       <div className={props.classname}>
@@ -62,7 +63,7 @@ const ContainerInput = (props) => {
 
         <div className="containerInputDate">
           <label className="dateLabel" htmlFor="taskdate">
-            Task Date
+            Task Date*
           </label>
           <input
             type="datetime-local"
@@ -82,11 +83,15 @@ const ContainerInput = (props) => {
       </div>
 
       <section className="section">
-        {JSON.parse(localStorage.getItem("dataLocal")).map((data, input) => {
+        
+        {dataArray.length > 0 ? (JSON.parse(localStorage.getItem("dataLocal")).map((data, input) => {
           return <Task name={data.name} date={data.date} key={input} />;
-        })}
-      </section>
+        })) : "No Task"  }
 
+        {/* {JSON.parse(localStorage.getItem("dataLocal")).map((data, input) => {
+          return <Task name={data.name} date={data.date} key={input} />;
+        })} */}
+      </section>
     </div>
   );
 };

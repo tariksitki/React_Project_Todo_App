@@ -2,9 +2,13 @@
 
 .container {
     margin-top: 5rem;
+    margin-bottom: 3rem;
     width: 50%;
     background-color: #89CFF0;
     border-radius: 0.5rem;
     border: 2px solid white;
-    
+    min-height: 20rem;
+    outline: 1px solid white;
+    outline-offset: 10px;
+    // position: absolute;
 }

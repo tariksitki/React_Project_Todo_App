@@ -2,11 +2,14 @@
 .task-div {
     width: 60%;
     height: 5rem;
-    background-color: coral;
+    background-color: white;
     margin: auto;
     margin-top: 2rem;
     padding: 1rem;
     border-radius: 0.3rem;
+    // border: 1px solid rgb(21, 101, 192);
+    color: rgb(94, 94, 94);
+
     
 
     .task-div-up {
@@ -14,13 +17,16 @@
         justify-content: space-between;
         width: 100%;
         
-        // .task-div-name {
-        //     padding: 1rem;
-        // }
+        .task-div-name {
+            text-transform: capitalize;
+        }
 
-        // .task-div-down {
-        //     padding: 1rem;
-        // }
+        .task-div-close {
+            cursor: pointer;
+            font-weight: 700;
+            color: rgb(21, 101, 192);
+            
+        }
     }
 
     .task-div-down {

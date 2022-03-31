@@ -7,13 +7,13 @@ import Task from "../task/Task";
 
 const Container = () => {
     const [stateOpen, setStateOpen] = useState(true);
-    const [stateAdd, setStateAdd] = useState(true);
+    // const [stateAdd, setStateAdd] = useState(true);
    
     const handleClickOpen = (e) => {
        return ( 
-        (e.target.classList.contains("buttonOpen") ? setStateOpen(!stateOpen) : null)
+        ((e.target.classList.contains("buttonOpen") || e.target.classList.contains("buttonIcon")) ? setStateOpen(!stateOpen) : null)
        )}
-    
+        
     return (
         <div className="container" onClick={(e) => {
             handleClickOpen(e)

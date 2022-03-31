@@ -32,6 +32,7 @@
       font-size: 1.1rem;
       color: rgb(21, 101, 192);
       outline: none;
+      text-transform: capitalize;
       &:focus {
         box-shadow: 0 0 15px 1px rgb(21, 101, 192);
       }
@@ -57,6 +58,10 @@
       padding-right: 1rem;
       font-size: 1.1rem;
       color: rgb(21, 101, 192);
+      outline: none;
+      &:focus {
+        box-shadow: 0 0 15px 1px rgb(21, 101, 192);
+      }
     }
     label {
       color: rgb(21, 101, 192);

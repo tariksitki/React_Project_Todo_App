@@ -2,12 +2,13 @@ import "./ContainerInput.scss";
 import { useState } from "react";
 import Task from "../task/Task";
 
-let dataArray = JSON.parse(localStorage.getItem("dataLocal"));
+let dataArray = JSON.parse(localStorage.getItem("dataLocal")) || [];
+
+let dataFromLocalStorage = JSON.parse(localStorage.getItem("dataLocal")) || [];
 
 const ContainerInput = (props) => {
   const [stateName, setStateName] = useState("");
   const [stateDate, setStateDate] = useState("");
-  const [stateAdd, setStateAdd] = useState(false);
 
   const handleName = (e) => {
     return setStateName(e.target.value);
@@ -19,34 +20,36 @@ const ContainerInput = (props) => {
 
   const handleAdd = (e) => {
     if (stateName && stateDate) {
-      dataArray.push({ name: stateName, date: stateDate });
+      dataArray?.push({ name: stateName, date: stateDate });
+      localStorage.setItem("dataLocal", JSON.stringify(dataArray));
     } else {
       alert("Please Enter a Value for Name and Date");
     }
-    localStorage.setItem("dataLocal", JSON.stringify(dataArray));
     setStateName("");
     setStateDate("");
   };
+  
+  console.log(dataArray);
 
   const handleDelete = (e) => {
     return (
-      e.target.classList.contains("task-div-close")
-        ? e.target.parentElement.parentElement.remove()
+      e.target.classList?.contains("task-div-close")
+        ? e.target.parentElement?.parentElement?.remove()
         : null,
-      (dataArray = dataArray.filter((item) => {
+      (dataArray = dataArray?.filter((item) => {
         return (
           item.name !== e.target.parentElement.firstElementChild.innerText &&
-          item.date !==
+          item?.date !==
             e.target.parentElement.parentElement.lastElementChild.innerText
         );
       })),
-      localStorage.setItem("dataLocal", JSON.stringify(dataArray))
       
+      localStorage.setItem("dataLocal", JSON.stringify(dataArray))
     );
   };
   
   return (
-    <div className="containerInput" onClick={handleDelete}>
+    <div className="containerInput" onClick={handleDelete} >
       <div className={props.classname}>
         <div className="containerInputName">
           <label className="nameLabel" htmlFor="taskname">
@@ -83,10 +86,13 @@ const ContainerInput = (props) => {
       </div>
 
       <section className="section">
-        
-        {dataArray.length > 0 ? (JSON.parse(localStorage.getItem("dataLocal")).map((data, input) => {
+        {dataArray?.length > 0 ? (JSON.parse(localStorage.getItem("dataLocal")).map((data, input) => {
           return <Task name={data.name} date={data.date} key={input} />;
-        })) : "No Task"  }
+        })) : (
+          <div className="no-task-div" >
+            <h3>"You have not Task"</h3>
+          </div>
+        )}
 
         {/* {JSON.parse(localStorage.getItem("dataLocal")).map((data, input) => {
           return <Task name={data.name} date={data.date} key={input} />;

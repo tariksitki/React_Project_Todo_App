@@ -92,6 +92,17 @@
 
   .section {
     width: 100%;
+
+    .no-task-div {
+      width: 100%;
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      h3 {
+        font-size: 1.3rem;
+      }
+      
+    }
   }
 }
 
